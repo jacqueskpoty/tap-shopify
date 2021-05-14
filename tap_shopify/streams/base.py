@@ -30,6 +30,14 @@ def is_not_status_code_fn(status_code):
         return False
     return gen_fn
 
+def is_status_code_fn(status_code):
+    def gen_fn(exc):
+        if getattr(exc, 'code', None) and exc.code in status_code:
+            return True
+        # Retry other errors up to the max
+        return False
+    return gen_fn
+
 def leaky_bucket_handler(details):
     LOGGER.info("Received 429 -- sleeping for %s seconds",
                 details['wait'])
@@ -53,6 +61,7 @@ def retry_after_wait_gen(**kwargs):
 def shopify_error_handling(fnc):
     @backoff.on_exception(backoff.expo,
                           pyactiveresource.connection.Error,
+                          giveup=is_status_code_fn(range(500, 599, 429)),
                           on_backoff=retry_handler,
                           max_tries=MAX_RETRIES)
     @backoff.on_exception(backoff.expo,
