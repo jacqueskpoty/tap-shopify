@@ -20,7 +20,7 @@ RESULTS_PER_PAGE = 175
 DATE_WINDOW_SIZE = 1
 
 # We will retry a 500 error a maximum of 5 times before giving up
-MAX_RETRIES = 5
+MAX_RETRIES = 10
 
 def is_not_status_code_fn(status_code):
     def gen_fn(exc):
@@ -51,6 +51,10 @@ def retry_after_wait_gen(**kwargs):
     yield math.floor(float(sleep_time_str))
 
 def shopify_error_handling(fnc):
+    @backoff.on_exception(backoff.expo,
+                          pyactiveresource.connection.Error,
+                          on_backoff=retry_handler,
+                          max_tries=MAX_RETRIES)
     @backoff.on_exception(backoff.expo,
                           (pyactiveresource.connection.ServerError,
                            pyactiveresource.formats.Error,
