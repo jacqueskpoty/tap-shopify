@@ -6,7 +6,7 @@ setup(
     version="1.2.8-airbyte",
     description="Singer.io tap for extracting Shopify data",
     author="Stitch",
-    url="http://github.com/singer-io/tap-shopif",
+    url="http://github.com/singer-io/tap-shopify",
     classifiers=["Programming Language :: Python :: 3 :: Only"],
     py_modules=["tap_shopify"],
     install_requires=[
