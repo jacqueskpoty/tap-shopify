@@ -8,5 +8,5 @@ import tap_shopify.streams.products
 import tap_shopify.streams.collects
 import tap_shopify.streams.custom_collections
 import tap_shopify.streams.pages
-import tap_shopify.discount_codes
-import tap_shopify.price_rules
+import tap_shopify.streams.discount_codes
+import tap_shopify.streams.price_rules
