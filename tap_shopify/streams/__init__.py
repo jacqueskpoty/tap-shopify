@@ -7,3 +7,6 @@ import tap_shopify.streams.transactions
 import tap_shopify.streams.products
 import tap_shopify.streams.collects
 import tap_shopify.streams.custom_collections
+import tap_shopify.streams.pages
+import tap_shopify.discount_codes
+import tap_shopify.price_rules
