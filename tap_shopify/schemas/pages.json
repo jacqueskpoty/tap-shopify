@@ -1,62 +1,61 @@
 {
-    "properties": {
-      "author": {
-        "type": [
-          "null",
-          "string"
-        ]
-      },
-      "body_html": {
-        "body_html": [
-          "null",
-          "string"
-        ]
-      },
-      "created_at": {
-        "type": [
-          "null",
-          "string"
-        ],
-        "format": "date-time"
-      },
-      "handle": {
-        "type": [
-          "null",
-          "string"
-        ]
-      },
-      "published_at": {
-        "type": [
-          "null",
-          "string"
-        ],
-        "format": "date-time"
-      },
-      "shop_id": {
-        "type": [
-          "null",
-          "integer"
-        ]
-      },
-      "template_suffix": {
-        "type": [
-          "null",
-          "string"
-        ]
-      },
-      "title": {
-        "type": [
-          "null",
-          "string"
-        ]
-      },
-      "updated_at": {
-        "type": [
-          "null",
-          "string"
-        ],
-        "format": "date-time"
-      }
+  "properties": {
+    "author": {
+      "type": [
+        "null",
+        "string"
+      ]
     },
-    "type": "object"
+    "body_html": {
+      "body_html": [
+        "null",
+        "string"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "handle": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "published_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "shop_id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "template_suffix": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "title": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    }
+   },"type": "object"
   }
